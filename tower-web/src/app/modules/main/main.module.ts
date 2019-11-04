@@ -47,7 +47,7 @@ import { WorkflowUnknownComponent } from "./component/workflow-unknown/workflow-
 import { LoadingComponent } from './component/loading/loading.component';
 import { TreeListComponent } from "./component/tree-list/TreeListComponent";
 import { WorkflowStatusIconComponent } from "../../workflow-status-icon/workflow-status-icon.component";
-
+import { ReportingComponent } from "./component/reporting/reporting.component"
 /*
  * Main application routing strategy
  */
@@ -59,6 +59,7 @@ const routes: Routes = [
      {path: 'tokens',       component: AccessTokenComponent, canActivate: [AuthGuard]},
      {path: 'welcome',      component: WelcomeComponent, canActivate: [AuthGuard]},
      {path: 'login',        component: LoginComponent},
+     {path: 'reporting', component: ReportingComponent, canActivate: [AuthGuard]}
    ]
   },
   {path: 'metrics/:id',  component: WorkflowMetricsComponent},
@@ -100,7 +101,8 @@ export class MainRoutingModule { }
     HomeComponent,
     NotificationComponent,
     LandingComponent,
-    TreeListComponent
+    TreeListComponent,
+    ReportingComponent
   ],
   imports: [
     BrowserModule,

@@ -1,10 +1,21 @@
 <div class="container mt-5 w-75">
-
-    <div class="card">
-      <wt-workflow-card *ngFor="let workflow of workflows"
-                  [workflow]="workflow">
-      </wt-workflow-card>
-
+    <div class="card-header">
+        <h1>Tower stats</h1>
     </div>
-  
+    <div class="card">
+        <h3>Total workflows run: {{workflows.length}}</h3>
+
+        <table class="table">
+        <tr>
+            <th>Project Name</th>
+            <th># Runs</th>
+        </tr>
+        <tr *ngFor="let x of runsAndCounts | keyvalue">
+            <td>{{x.key}}</td>
+            <td>{{x.value}}</td>
+        </tr>
+        </table>
+
+        <div id="usageDiv"></div>
+    </div>
 </div>
